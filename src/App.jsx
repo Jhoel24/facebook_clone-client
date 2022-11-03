@@ -8,10 +8,13 @@ import Layout from "./layout/Layout";
 import Home from "./pages/home/Home";
 import Profile from "./pages/profile/Profile";
 import ProtectedRoute from "./routes/ProtectedRoute";
+import './style.scss'
+import useDarkMode from "./hooks/useDarkMode";
+import useAuth from "./hooks/useAuth";
 
 function App() {
 
-  const currentUser = true;
+  const { currentUser } = useAuth()
 
   const router = createBrowserRouter([
     {

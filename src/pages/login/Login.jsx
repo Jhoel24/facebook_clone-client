@@ -1,7 +1,18 @@
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import './login.scss'
+import useAuth from '../../hooks/useAuth'
 
 const Login = () => {
+
+  const { login } = useAuth()
+  const navigate = useNavigate()
+
+  const handleLogin = e => {
+    e.preventDefault()
+    login()
+    navigate('/')
+  }
+
   return (
     <div className='login' >
       <div className="card">
@@ -18,7 +29,7 @@ const Login = () => {
           <form >
             <input type="text" placeholder='Username' />
             <input type="password" placeholder='Password' />
-            <button>Login</button>
+            <button onClick={handleLogin} >Login</button>
           </form>
         </div>
       </div>

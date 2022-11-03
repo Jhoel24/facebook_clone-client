@@ -12,15 +12,19 @@ import Messages from '../../assets/10.png'
 import Tutorials from '../../assets/11.png'
 import Courses from '../../assets/12.png'
 import Fund from '../../assets/13.png'
+import useAuth from '../../hooks/useAuth'
 
 const LeftBar = () => {
+
+  const { currentUser } = useAuth()
+
   return (
     <div className="leftbar">
       <div className="container">
         <div className="menu">
           <div className="user">
             <img src="/pamela.jpeg" alt="" />
-            <span>Pamela Torres</span>
+            <span>{ currentUser.name }</span>
           </div>
           <div className="item">
             <img src={Friends} alt="friends" />
