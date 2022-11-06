@@ -1,3 +1,5 @@
+@import "../../style.scss";
+
 .register {
     height: 100vh;
     background-color: #B7C4CF;
@@ -13,6 +15,12 @@
         border-radius: 10px;
         min-height: 600px;
         overflow: hidden;
+        @include mobile {
+            flex-direction: column;
+            width: 90%;
+            height: 90vh;
+            overflow: auto;
+        }
 
         .left {
             flex: 1;
